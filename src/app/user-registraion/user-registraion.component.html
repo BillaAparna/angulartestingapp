@@ -1,0 +1,16 @@
+
+<form  #y="ngForm" (ngSubmit)="addUserData()">
+    <div class="form-floating mt-3">
+        <input type="text" class="form-control" id="name" name="firstname" placeholder="enter name" [(ngModel)]=userobj.firstname>
+        <label for="name">FirstName</label>
+    </div>
+    <div class="form-floating mt-3">
+        <input type="text" class="form-control" id="name" name="lastname" placeholder="enter name" [(ngModel)]=userobj.lastname>
+        <label for="name">LastName</label>
+    </div>
+    <div class="form-floating mt-3">
+        <input type="email" class="form-control" name="email" id="un1"  placeholder="enter name" [(ngModel)]=userobj.email>
+        <label for="un1">Email</label>
+    </div>
+    <button type="submit" class="btn btn-success d-block mt-2 mx-auto">register</button>
+</form> 

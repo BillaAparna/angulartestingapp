@@ -1,0 +1,110 @@
+
+<!-- 
+<h1>welcome to my webpage</h1>
+<hr>
+<div class="text-center">
+    <!-- interpolation 
+    <h1>{{name}} <span>{{version}}</span></h1>
+    <h1>{{instructor}}</h1>
+    <h2>{{course.duration}}</h2>
+    <h2>{{course.c_name}}</h2>
+    <h2>{{course.mode}}</h2>
+    <!-- property binding 
+    <img [src]=imagepath alt=""><br>
+    <input type="text" [value]=name>
+    <!-- frst one works but second does not work for diabled is false 
+    <button class="btn btn-success" [disabled]=status>test button</button>
+    <button class="btn btn-success" disabled={{status}}>test button</button>
+    <!-- event binding 
+    <div>
+    <input type="text"placeholder="enter name" class="form-control" #ref>
+    <button class="btn btn-primary" (click)="sendData(ref.value);ref.value=' '">send data</button>
+
+    <h1>{{data}}</h1>
+    </div>
+</div> -->
+
+<!-- structural directives -->
+<!-- change value of check to see working -->
+<!-- <div class="text-center">
+    <button class="btn btn-success" (click)="changestatus()">{{check?"Hide":"Show"}}</button>
+    <h1 *ngIf="check">welcome</h1>
+    <h2 *ngFor="let v of arr">{{v}}</h2>
+</div>
+<div class="form-floating mb-3 ms-4">
+    
+    <input type="text" class="form-control" id="un2" va placeholder="enter name" #ref>
+    <label for="un2"> Username</label>
+    <button class="btn btn-primary" (click)="senddata(ref.value);ref.value=' '">add me</button>
+    
+</div>
+<h1 *ngIf="l.length==0">no items found!!</h1>
+<h1 *ngFor="let n of l ;let ind=index">{{n}}
+    <button class="btn btn-danger" (click)="deletedata(ind)">delte me</button>
+</h1>
+<!-- two way binding -->
+<!-- <div class="form-floating mb-3 ms-4">
+    
+    <input type="text" class="form-control" id="un" va placeholder="enter name" [(ngModel)]=x>
+    <label for="un"> Username</label>
+    <button class="btn btn-primary" (click)="senditem()">add me</button>
+    <h2 *ngFor="let v of l2">{{v}}</h2>
+</div> -->
+
+    <!-- <form  #y="ngForm" (ngSubmit)="addUserData(y)">
+        <div class="form-floating mt-3">
+            <input type="text" class="form-control" id="name" name="username" placeholder="enter name" ngModel>
+            <label for="name">UserName</label>
+        </div>
+        <div class="form-floating mt-3">
+        
+        <input type="email" class="form-control" name="email" id="un1"  placeholder="enter name" ngModel>
+        <label for="un1">Email</label>
+        </div>
+        <div class="form-floating mt-3">
+        <input type="password" name="pwd" id="pwd" name="password" class="form-control" placeholder="pwd" ngModel>
+        <label for="pwd">PassWord</label>
+        </div>
+        <button type="submit" class="btn btn-success d-block mt-2 mx-auto">register</button>
+    </form> -->
+
+
+    <!--using two binding for form submision-->
+   <!-- <form  #y="ngForm" (ngSubmit)="addUserData()">
+        <div class="form-floating mt-3">
+            <input type="text" class="form-control" id="name" name="firstname" placeholder="enter name" [(ngModel)]=userobj.firstname>
+            <label for="name">FirstName</label>
+        </div>
+        <div class="form-floating mt-3">
+            <input type="text" class="form-control" id="name" name="lastname" placeholder="enter name" [(ngModel)]=userobj.lastname>
+            <label for="name">LastName</label>
+        </div>
+        <div class="form-floating mt-3">
+            <input type="email" class="form-control" name="email" id="un1"  placeholder="enter name" [(ngModel)]=userobj.email>
+            <label for="un1">Email</label>
+        </div>
+        <button type="submit" class="btn btn-success d-block mt-2 mx-auto">register</button>
+    </form> 
+    <h1>hello</h1>
+     -->
+<div class="text-center p-2 bg-primary">
+    <h1>user management system
+        </h1>
+    </div>
+     <div class="container">
+         <div class="row">
+             <div class="col-sm-6">
+                <app-user-registraion></app-user-registraion>
+
+             </div>
+             <div class="col-sm-6">
+                <app-user-list>
+                </app-user-list>
+            </div>
+         </div>
+     </div>
+ 
+
+
+
+   
