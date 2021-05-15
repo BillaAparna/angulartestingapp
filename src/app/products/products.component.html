@@ -1,6 +1,8 @@
-
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 ">
-<div class="col mb-2" *ngFor="let i of products">
-<app-product-details></app-product-details>
+<h4 class="text-center " *ngIf="titles.length!=0">no.of products selectd:{{count}}</h4>
+<h3 *ngFor="let v of titles" class="text-center">{{v}} </h3>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 pt-4">
+<div class="col mb-2" *ngFor="let probj of products">
+<app-product-details [productobj]=probj (myEvent)="getdata($event)" ></app-product-details>
 </div>
 </div>
+<!-- <app-displayname [myname]=name></app-displayname> -->

@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, Input, EventEmitter, Output } from '@angular/core';
+import {Product} from '../models/product.model';
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.css']
 })
-export class ProductDetailsComponent implements OnInit {
+export class ProductDetailsComponent  {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  @Input() productobj:Product;
+  //create custom inout
+  @Output() myEvent=new EventEmitter();
+  senddata(title){
+    this.myEvent.emit(title);
   }
-
 }
