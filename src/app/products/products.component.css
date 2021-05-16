@@ -1,0 +1,11 @@
+li{
+    background-color:deeppink;
+
+}
+li a{
+    color:white;
+}
+.active{
+    background-color:goldenrod;
+    color:white;
+}

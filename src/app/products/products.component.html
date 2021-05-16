@@ -1,8 +1,26 @@
-<h4 class="text-center " *ngIf="titles.length!=0">no.of products selectd:{{count}}</h4>
+<!-- <h4 class="text-center " *ngIf="titles.length!=0">no.of products selectd:{{count}}</h4>
 <h3 *ngFor="let v of titles" class="text-center">{{v}} </h3>
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 pt-4">
 <div class="col mb-2" *ngFor="let probj of products">
 <app-product-details [productobj]=probj (myEvent)="getdata($event)" ></app-product-details>
 </div>
-</div>
+</div> -->
 <!-- <app-displayname [myname]=name></app-displayname> -->
+
+
+<!-- pills -->
+
+<ul class="nav nav-pills justify-content-evenly mt-3">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="mobiles" routerLinkActive="active">Active</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="bikes" routerLinkActive="active">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="televisions" routerLinkActive="active">Link</a>
+    </li>
+  </ul>
+  <div class="container">
+    <router-outlet></router-outlet>
+    </div>
