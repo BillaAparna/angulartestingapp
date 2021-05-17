@@ -13,7 +13,13 @@ export class MobilesComponent implements OnInit {
   constructor(private dsobj:DataService){
   }
   ngOnInit(){
-    this.mobiles=this.dsobj.getmobilesdata();
+    this.dsobj.getmobilesdata().subscribe(data=>{
+      this.mobiles=data;
+    },
+      err=>{
+      console.log(err)
+    }
+    )
   }
    /*name:string="contact here";
    titles=[]

@@ -9,10 +9,11 @@ import { TestService } from '../test.service';
 export class TelevisionsComponent implements OnInit {
 
   constructor(private tsobj:TestService) { }
-num:number;
+num:number; 
   ngOnInit(): void {
     this.num=this.tsobj.getdata();
   }
 
 }
 
+ 
