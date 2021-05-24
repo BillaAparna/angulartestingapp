@@ -1,26 +1,15 @@
 <div class="background">
 <table class="table text-white text-center">
+    <!-- id is unique -->
     <thead>
         <tr>
-            <th>UserId</th>
             <th>Id</th>
-            <th>Title</th>
-            <th>Body</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let postObj of myPosts">
             <td>
-                {{postObj.userId}}
-            </td>
-            <td>
-                {{postObj.id}}
-            </td>
-            <td>
-                {{postObj.title}}
-            </td>
-            <td>
-                {{postObj.body}}
+                <button class="btn btn-sm btn-warning" (click)="onSelectId(postObj.id)">{{postObj.id}}</button>
             </td>
         </tr>
     </tbody>

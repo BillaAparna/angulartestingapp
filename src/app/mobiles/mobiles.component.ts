@@ -15,6 +15,7 @@ export class MobilesComponent implements OnInit {
   ngOnInit(){
     this.dsobj.getmobilesdata().subscribe(data=>{
       this.mobiles=data;
+      console.log(this.mobiles)
     },
       err=>{
       console.log(err)

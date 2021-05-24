@@ -10,11 +10,14 @@ import { ProductsComponent } from './products/products.component';
 import { RegisterComponent } from './register/register.component';
 import { TelevisionsComponent } from './televisions/televisions.component';
 import { TestComponent } from './test/test.component';
+import { UserdetailsComponent } from './userdetails/userdetails.component';
 const routes: Routes = [
   {path:'home',component:HomeComponent},
   {path:'register',component:RegisterComponent},
   {path:'login',component:LoginComponent},
   {path:'contactus',component:ContactusComponent},
+  {path:'test',component:TestComponent},
+  {path:'test/:id',component:UserdetailsComponent},
   {path:'products',component:ProductsComponent,children:
   [
     {path:'mobiles',component:MobilesComponent},
@@ -23,7 +26,7 @@ const routes: Routes = [
     {path:'',redirectTo:'/products/mobiles',pathMatch:'full'},
   ]},
   {path:'',redirectTo:'/login',pathMatch:'full'},
-  {path:'test',component:TestComponent},
+  
   {path:'**',component:PagenotfoundComponent},
 ];
 

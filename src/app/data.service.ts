@@ -10,14 +10,9 @@ export class DataService {
   constructor(private hc:HttpClient) { }
     
    getmobilesdata():Observable<Product[]>{
-     return this.hc.get<Product[]>("assets/mobiles.json");
+     return this.hc.get<Product[]>("http://localhost:3000/mobiles");
    }
-
-
-
-
    
-
   }
 
 
