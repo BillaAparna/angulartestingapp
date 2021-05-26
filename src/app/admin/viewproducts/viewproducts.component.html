@@ -1,0 +1,14 @@
+<table class="table">
+    <thead>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Image</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let mbobj of mobiles" class=" text-white">
+            <td>{{mbobj.productTitle}}</td>
+            <td>{{mbobj.description}}</td>
+            <td><img src="{{mbobj.productImage}}" width="100px" alt=""></td>
+        </tr>
+    </tbody>
+</table>

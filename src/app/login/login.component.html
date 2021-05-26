@@ -2,14 +2,14 @@
 <div class="row">
     <div class="col-sm-2 col-md-4"></div>
     <div class="col-sm-8 col-md-4">
-        <form>
+        <form #ref="ngForm" (ngSubmit)="onLogin(ref)">
               <div class="mb-3">
-                <label for="mail" class="form-label" name="email">Email</label>
-                <input type="email" class="form-control" id="mail" placeholder="enter email">
+                <label for="mail" class="form-label" >Email</label>
+                <input type="email" class="form-control" id="mail" placeholder="enter email" name="email"ngModel>
               </div>
               <div class="mb-3">
-                <label for="pw" class="form-label" name="password">Password</label>
-                <input type="password" class="form-control" id="pw" placeholder="enter password">
+                <label for="pw" class="form-label" >Password</label>
+                <input type="password" class="form-control" id="pw" placeholder="enter password " name="password" ngModel>
               </div>
               <button type="submit" class="btn btn-success d-block mx-auto">Login</button>
         </form>
