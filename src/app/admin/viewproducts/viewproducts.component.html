@@ -1,14 +1,37 @@
-<table class="table">
-    <thead>
-        <th>Id</th>
-        <th>Title</th>
-        <th>Image</th>
-    </thead>
-    <tbody>
-        <tr *ngFor="let mbobj of mobiles" class=" text-white">
-            <td>{{mbobj.productTitle}}</td>
-            <td>{{mbobj.description}}</td>
-            <td><img src="{{mbobj.productImage}}" width="100px" alt=""></td>
-        </tr>
-    </tbody>
-</table>
+
+<div class="table-content">
+    <form #ref="ngForm" (ngSubmit)="saveMobile(ref.value)">
+    <table class="table">
+        <thead>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Image</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let mbobj of mobiles;let ind=index" class=" text-white">
+                <td>
+                    <span *ngIf="!editMobileStatus || editMobileIndex!==ind">{{mbobj.productTitle}} </span>
+                <input type="text"  name="productTitle" [(ngModel)]="editMobileObj.productTitle" *ngIf="editMobileStatus && editMobileIndex==ind">
+                </td>
+                <td>
+                    <span *ngIf="!editMobileStatus || editMobileIndex!==ind">{{mbobj.description}} </span>
+                    <input type="text" name="description" [(ngModel)]="editMobileObj.description" *ngIf="editMobileStatus && editMobileIndex==ind">
+                    </td>
+                <td>
+                    <img src="{{mbobj.productImage}}" width="100px" alt="">
+
+                </td>
+                <td>
+                    <span *ngIf="!editMobileStatus || editMobileIndex!==ind">
+                        <button class="btn btn-warning mb-1" (click)="editMobile(mbobj,ind)"><i class="fas fa-pen-square"></i></button>
+                        <button class="btn btn-danger" (click)="deleteMobile(mbobj,ind)"><i class="fas fa-trash-alt"></i></button>
+                    </span>
+                    <span *ngIf="editMobileStatus && editMobileIndex==ind">
+                        <button type="submit" class="btn btn-sm btn-success mb-1" ><i class="fas fa-save text-white"></i></button>
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+</div>
