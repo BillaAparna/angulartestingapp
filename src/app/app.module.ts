@@ -22,6 +22,7 @@ import { TestComponent } from './test/test.component';
 import { UserdetailsComponent } from './userdetails/userdetails.component';
 import { ViewmobileComponent } from './viewmobile/viewmobile.component';
 import { AddmobileComponent } from './addmobile/addmobile.component';
+import { SquarePipe } from './square.pipe';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { AddmobileComponent } from './addmobile/addmobile.component';
     TestComponent,
     UserdetailsComponent,
     ViewmobileComponent,
-    AddmobileComponent
+    AddmobileComponent,
+    SquarePipe
   ],
   imports: [
     BrowserModule,

@@ -18,6 +18,10 @@ export class ViewproductsComponent implements OnInit {
   constructor(private dsobj:DataService){
   }
   ngOnInit(){
+    this.getusers();
+    
+  }
+  getusers(){
     this.dsobj.getmobilesdata().subscribe(data=>{
       this.mobiles=data;
       console.log(this.mobiles)
@@ -52,6 +56,14 @@ export class ViewproductsComponent implements OnInit {
     )
 
   
+  }
+  delMobile(mbobj){
+    this.dsobj.deleteMobile(mbobj.id).subscribe(data=>{
+      this.getusers();
+    },
+    err=>{
+      console.log("error in delete");
+    })
   }
   //save data to json
 

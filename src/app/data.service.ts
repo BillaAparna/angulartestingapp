@@ -19,6 +19,25 @@ export class DataService {
    updateMobile(modifiedMobileObj):Observable<any>{
      return this.hc.put("http://localhost:3000/mobiles/"+modifiedMobileObj.id,modifiedMobileObj)
    }
+   deleteMobile(id):Observable<any>{
+     return this.hc.delete("http://localhost:3000/mobiles/"+id);
+   }
+
+
+   //to check login status
+   userLoginStatus():boolean{
+     if(localStorage.getItem("username")==null){
+       return false;
+     }
+     else{
+      return true;
+     }
+   }
+
+   userLogout(){
+    localStorage.clear();
+    
+  }
   }
 
 

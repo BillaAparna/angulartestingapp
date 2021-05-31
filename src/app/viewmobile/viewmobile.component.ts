@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { DataService } from '../data.service';
 import { Product } from '../models/product.model';
 @Component({
@@ -9,12 +10,15 @@ import { Product } from '../models/product.model';
 export class ViewmobileComponent implements OnInit {
 
   mobiles:Product[]=[];
+  //mobiles=new Observable<Product[]>();
   //inject object of DataService class
   constructor(private dsobj:DataService){
   }
-  ngOnInit(){
+ngOnInit(){
 
-    this.dsobj.getmobilesdata().subscribe(data=>{
+    this.dsobj.getmobilesdata()
+    .subscribe(
+      data=>{
       this.mobiles=data;
       console.log(this.mobiles)
     },
@@ -22,5 +26,6 @@ export class ViewmobileComponent implements OnInit {
       console.log(err)
     }
     )
+
 }
 }

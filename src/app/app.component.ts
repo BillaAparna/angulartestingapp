@@ -1,5 +1,6 @@
 import { prepareSyntheticPropertyName } from '@angular/compiler/src/render3/util';
 import { Component } from '@angular/core';
+import { DataService } from './data.service';
 import {User} from './models/user.model' ;
 @Component({
   selector: 'app-root ',
@@ -7,6 +8,23 @@ import {User} from './models/user.model' ;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+      constructor(public dsobj:DataService){}
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
     /*name:string="Angular";
     version:number=11;
     instructor:string="rajesh";

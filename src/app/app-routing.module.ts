@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddmobileComponent } from './addmobile/addmobile.component';
+import { AdminGuard } from './admin.guard';
 import { BikesComponent } from './bikes/bikes.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { HomeComponent } from './home/home.component';
@@ -33,7 +34,7 @@ const routes: Routes = [
     {path:'',redirectTo:'/products/mobiles',pathMatch:'full'},
   ]},
   {path:'',redirectTo:'/login',pathMatch:'full'},
-  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
+  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),canActivate :[AdminGuard]},
   
   {path:'**',component:PagenotfoundComponent},
 ];
