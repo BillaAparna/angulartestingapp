@@ -23,6 +23,7 @@ import { UserdetailsComponent } from './userdetails/userdetails.component';
 import { ViewmobileComponent } from './viewmobile/viewmobile.component';
 import { AddmobileComponent } from './addmobile/addmobile.component';
 import { SquarePipe } from './square.pipe';
+import { SearchPipe } from './search.pipe';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { SquarePipe } from './square.pipe';
     UserdetailsComponent,
     ViewmobileComponent,
     AddmobileComponent,
-    SquarePipe
+    SquarePipe,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

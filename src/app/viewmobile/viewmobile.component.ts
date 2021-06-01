@@ -10,6 +10,7 @@ import { Product } from '../models/product.model';
 export class ViewmobileComponent implements OnInit {
 
   mobiles:Product[]=[];
+  searchItem:string;
   //mobiles=new Observable<Product[]>();
   //inject object of DataService class
   constructor(private dsobj:DataService){

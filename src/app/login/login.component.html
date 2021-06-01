@@ -2,19 +2,81 @@
 <div class="row">
     <div class="col-sm-2 col-md-4"></div>
     <div class="col-sm-8 col-md-4">
-        <form #ref="ngForm" (ngSubmit)="onLogin(ref)">
+        <form #ref="ngForm" (ngSubmit)="ref.form.valid&& onLogin(ref)">
               <div class="mb-3">
-                <label for="mail" class="form-label" >Email</label>
-                <input type="email" class="form-control" id="mail" placeholder="enter email" name="email"ngModel>
+                <label for="un" class="form-label" >UserName</label>
+                <input type="text" class="form-control" id="un" name="username" ngModel required minlength="4"
+                  #refusername="ngModel" autocomplete="off">
+                <p class="text-warning" *ngIf="(ref.submitted||refusername.touched)&&refusername.errors?.required">*
+                  Username is required
+              </p>
+        
+              <p class="text-warning" *ngIf="(ref.submitted||refusername.touched)&&refusername.errors?.minlength">*
+                  Minlength should be 4
+              </p>
               </div>
+
+
+
               <div class="mb-3">
                 <label for="pw" class="form-label" >Password</label>
-                <input type="password" class="form-control" id="pw" placeholder="enter password " name="password" ngModel>
+                <input type="password" class="form-control" id="pw" placeholder="enter password " name="password" ngModel required pattern="\d\d-\d" #refpassword="ngModel">
+                <p class="text-warning" *ngIf="(ref.submitted||refpassword.touched)&&refpassword.errors?.required">*
+                password is required
+              </p>
+                <p class="text-warning" *ngIf="(ref.submitted||refpassword.touched)&&refpassword.errors?.pattern">*
+                      pattern doesnt match
+              </p>
+              
+
+
+
               </div>
+
+
+
               <button type="submit" class="btn btn-success d-block mx-auto">Login</button>
         </form>
           
     </div>
     <div class="col-sm-2 col-md-4"></div>
-</div>
+</div>  
+<!-- <div class="text-center">
+  <input type="text" name="name" #r ngModel>
+  <p>{{r.className}}</p>
+</div> -->
+<!-- <form class="text-white" #ref="ngForm" (ngSubmit)=" ref.form.valid&& onLogin(ref)">
+  <div class="mb-3">
+      <label for="un" class="form-label">Username</label>
 
+      <input type="text" class="form-control" id="un" name="username" ngModel required minlength="4"
+          #refUsername="ngModel" autocomplete="off">
+
+      <p class="text-warning" *ngIf="(ref.submitted||refUsername.touched)&&refUsername.errors?.required">*
+          Username is required
+      </p>
+
+      <p class="text-warning" *ngIf="(ref.submitted||refUsername.touched)&&refUsername.errors?.minlength">*
+          Minlength should be 4
+      </p>
+  </div>
+
+  <div class="mb-3">
+      <label for="pw" class="form-label">Password</label>
+      <input type="password" class="form-control" id="pw" name="password" ngModel required pattern="\d\d-\d.*"
+          #refPassword="ngModel" >
+
+
+          <p class="text-warning" *ngIf="(ref.submitted||refPassword.touched)&&refPassword.errors?.required">*
+              Password is required
+          </p>
+
+          <p class="text-warning" *ngIf="(ref.submitted||refPassword.touched)&&refPassword.errors?.pattern">*
+              Pattern not matched
+          </p>
+  </div>
+
+
+
+  <button type="submit" class="btn btn-success d-block mx-auto m-4">Login</button>
+</form> -->

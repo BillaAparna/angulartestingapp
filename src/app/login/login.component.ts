@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit{
       //navigate to admin component
       this.router.navigateByUrl("/admin")
     }
-
+console.log(ref.value)
   }
 
 }

@@ -1,9 +1,9 @@
 <h1>Mobiles</h1>
 
 
-<input type="text" name="productTitle" placeholder="Search by brand" class="form-control mb-3 mt-3">
+<input type="text" name="productTitle" placeholder="Search by brand" [(ngModel)]="searchItem" class="form-control mb-3 mt-3">
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mt-5 mb-5">
-    <div class="col" *ngFor="let mb of mobiles ">
+    <div class="col" *ngFor="let mb of mobiles |search:searchItem">
         <app-product-details [productobj]=mb></app-product-details>
     </div>
 </div>
